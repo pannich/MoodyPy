@@ -45,7 +45,7 @@ emotion  ={
 @st.cache(allow_output_mutation=True)
 def retrieve_model():
 
-    model = load_model("/Users/rebeccasamossanchez/code/rebeccasamos/live-streaming-app/emotion-video-tuto/model.h5")
+    model = load_model("model (1).h5")
     return model
 #Main inelligence of the file, class to launch a webcam, detect faces, then detect emotion and output probability for each emotion
 
