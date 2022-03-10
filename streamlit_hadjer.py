@@ -45,7 +45,7 @@ emotion  ={
 @st.cache(allow_output_mutation=True)
 def retrieve_model():
 
-    model = load_model("model (1).h5")
+    model = load_model("model.h5")
     return model
 #Main inelligence of the file, class to launch a webcam, detect faces, then detect emotion and output probability for each emotion
 
@@ -198,7 +198,6 @@ def app_emotion_detection():
 
 
 ############################ Sidebar + launching #################################################
-
 def main():
     our_cover_image=Image.open("new_cover_image.jpeg")
     st.image(our_cover_image)
@@ -244,7 +243,7 @@ def main():
             my_bar = st.progress(0)
             st.text('Calculating Emotion Step 1: resizing')
             for percent_complete in range(100):
-                time.sleep(0.05)
+                time.sleep(0.02)
                 my_bar.progress(percent_complete + 1)
             new_img=np.array(our_static_image.convert('RGB'))
             img=cv2.cvtColor(new_img,1)
@@ -252,11 +251,11 @@ def main():
             #ßst.image(our_static_image)
             st.text('Calculating Emotion Step 2: passing through prediction model')
             for percent_complete in range(100):
-                time.sleep(0.05)
+                time.sleep(0.02)
                 my_bar.progress(percent_complete + 1)
             st.text('Calculating Emotion Step 3: calculating confidence')
             for percent_complete in range(100):
-                time.sleep(0.05)
+                time.sleep(0.02)
                 my_bar.progress(percent_complete + 1)
 
 
