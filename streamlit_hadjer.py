@@ -200,6 +200,8 @@ def app_emotion_detection():
 ############################ Sidebar + launching #################################################
 
 def main():
+    our_cover_image=Image.open("new_cover_image.jpeg")
+    st.image(our_cover_image)
     st.title('Welcome to MoodyPy')
 
     activities =["Live Emotion Detector","Upload your Emotion!", "About"]
@@ -309,13 +311,13 @@ def main():
 
 
     elif choice ==  "About":
+        st.subheader('Our Team')
+        our_group_image=Image.open("Group_picture.png")
+        st.image(our_group_image, caption="…MoodyPy is loading your \U0001F600 \U0001F60D \U0001F621 \U0001F624 \U0001F4A8")
+
+
+
         st.markdown(f'''
-
-            ###  Team
-
-
-
-            Photos
 
             ### About our model
 
