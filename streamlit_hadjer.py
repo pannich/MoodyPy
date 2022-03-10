@@ -200,40 +200,33 @@ def app_emotion_detection():
 ############################ Sidebar + launching #################################################
 
 def main():
-    st.title('Emotion Detection App')
+    st.title('Welcome to MoodyPy')
 
-    activities =["Home","Upload your Emotion!", "Live Emotion Detector"]
+    activities =["Live Emotion Detector","Upload your Emotion!", "About"]
     choice = st.sidebar.selectbox('Select Activity',activities)
 
 
-    if choice=="Home":
+    if choice=="Live Emotion Detector":
          st.markdown(f'''
 
-        # Happy, with 20% chance of sadness
+        ### Deep learning for AI Facial Detector
 
-        > Deep learning for AI facial detector
-        >
+        ### Connecting Artificial Intelligence & Human Emotion
 
-        ### Helping Artificial Intelligence connect better to how we feel
-
-        Artificial Intelligence technology is developing fast. Whist AI technologies stride to improve efficiency in our everyday lives, the soft side[not sure] of AI is still falling behind. Since we will be interacting with computers more than ever, we see that it is crucial to develop AI that communicates smoothly to us just like another human. This allows the endless possibilities to advance AI applications in areas such as caring for elderlies or detecting drunk drivers. As a result, we spun off a Facial Expression Detector model. The model is trained by deep learning CNNs model [[and VGG16 transfer learning?]] to detect human emotions from the camera.
-
-        ### Try it out yourself :blush:
+        Artificial Intelligence technology is developing fast:
+        - Whilst AI technologies stride to improve efficiency in our everyday lives, the soft side of AI is still falling behind.
+        - We will be interacting with computers more than ever, and it is crucial to develop AI that communicates smoothly to us just like another human.
+        - As a result we decided to develop a realtime Emotion Detector, allowing AI to emphasise more with humans.
+        - This allows for endless possibilities to advance AI applications in areas such as healthcare or detecting drunk drivers.
+        ### Try it out yourself: how are you feeling today? :blush:
         ''')
 
          app_emotion_detection()
 
          st.markdown(f'''
 
-            Navigate to the 'Live Camera' section 👈 for the show!
+            Press Start 👈 to start the show!
 
-            ### About our model
-
-            CNNs model is trained with tensorflow [VGG16](https://www.tensorflow.org/api_docs/python/tf/keras/applications/vgg16/VGG16) transfer learning model. We use is [FER - CK+ - KDEF](https://www.kaggle.com/sudarshanvaidya/corrective-reannotation-of-fer-ck-kdef) ********dataset which ********contains 32,900 + images including 8 emotion categories – anger, contempt, disgust, fear, happiness, neutrality, sadness and surprise.
-
-            For better results, we narrow down to 6 emotion categories – anger, disgust, fear, happiness, sadness and surprise.
-
-            We finally ended up with 70% training accuracy and XX testing accuracy.
             ''')
 
 
@@ -315,8 +308,28 @@ def main():
 
 
 
-    elif choice ==  "Live Emotion Detector":
-        app_emotion_detection()
+    elif choice ==  "About":
+        st.markdown(f'''
+
+            ###  Team
+
+
+
+            Photos
+
+            ### About our model
+
+            Often CNNs models are trained with the tensorflow [VGG16](https://www.tensorflow.org/api_docs/python/tf/keras/applications/vgg16/VGG16) transfer learning model. In our case, we ended up using a less complex model that is four times smaller in term of size. So that we can have it run super smooth on the website. Our accuracy of the small model is not the best across all models, but it is good enough to predict emotions.
+
+            We used the FER 2013 (https://www.kaggle.com/msambare/fer2013) dataset, which contains 32,900 + images including 8 emotion categories – anger, contempt, disgust, fear, happiness, neutrality, sadness and surprise.
+
+            To achieve better accuracy and an effective tradeoff with timing, we narrowed our model down to 6 emotion categories – anger, disgust, fear, happiness, sadness and surprise.
+
+            We ended up with 64% testing accuracy.
+
+            We hope you enjoy it!
+
+            ''')
 
 
 if __name__ == '__main__':
